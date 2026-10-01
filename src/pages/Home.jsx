@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}db.json`)
-    fetch('/db.json')
+      //fetch('/db.json')
       .then((reponse) => reponse.json())
       .then((data) => {
         const meals = data.meals || []; //or 연산자로 넘겨받은 데이터가 있으면 data.meals 사용/없으면 [] 사용
