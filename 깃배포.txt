@@ -1,0 +1,26 @@
+- 리액트를 git 배포
+1) 깃허브에 repository 생성
+    예) https://github.com/HeoSsaM/myplate-app.git
+   -> repository명: myplate-app
+
+2) db.json으로 data를 보여줘야하는 경우
+fetch(`${import.meta.env.BASE_URL}db.json`)
+--> BASE_URL: vite.config.js 파일안에 
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: '/myplate-app/' -> 추가->repository 이름만 기재
+})
+
+3) npm run build -> src 폴더 내용을 압축해서 dist 폴더 생성
+4) 프로젝트 루트 폴더 하위에 
+    .github 폴더 생성 / workflows 폴더 생성 / deploy.yml 파일 생성하고 텍스트 입력
+
+5) npm run build
+
+6) git init/git add ./git commit -m "~"/git push  순으로 깃허브에 데이터 업로드
+7) github -> settings > pages에서 Github Action으로 변경
+8) Action에서 확인
+
+
+
